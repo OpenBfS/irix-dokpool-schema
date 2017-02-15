@@ -1,192 +1,206 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.bfs.de/IRIX/Extensions/Dokpool" version="1.1" xml:lang="en">
-    <xs:element name="DokpoolMeta">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element minOccurs="0" name="Purpose">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <xs:enumeration value="Standard-Info"/>
-                                    <xs:enumeration value="Bundesmessnetze"/>
-                                    <xs:enumeration value="Standard-Info DWD"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
-                <xs:element name="DokpoolContentType">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:enumeration value="eventinformation"/>
-                            <xs:enumeration value="notification"/>
-                            <xs:enumeration value="nppinformation"/>
-                            <xs:enumeration value="weatherinformation"/>
-                            <xs:enumeration value="trajectory"/>
-                            <xs:enumeration value="nppprojection"/>
-                            <xs:enumeration value="rodosprojection"/>
-                            <xs:enumeration value="otherprojection"/>
-                            <xs:enumeration value="gammadoserate"/>
-                            <xs:enumeration value="airactivity"/>
-                            <xs:enumeration value="groundcontamination"/>
-                            <xs:enumeration value="mresult_feed"/>
-                            <xs:enumeration value="mresult_food"/>
-                            <xs:enumeration value="mresult_water"/>
-                            <xs:enumeration value="situationreport"/>
-                            <xs:enumeration value="instructions"/>
-                            <xs:enumeration value="protectiveactions"/>
-                            <xs:enumeration value="mediarelease"/>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
-                <xs:element default="false" minOccurs="0" name="IsElan" type="xs:boolean">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element default="routinemode" maxOccurs="10" name="Scenario" type="xs:string">
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element default="true" minOccurs="0" name="IsDoksys" type="xs:boolean">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element minOccurs="0" name="NetworkOperator">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="U - BfS (ABI)"/>
-                                                <xs:enumeration value="W - DWD"/>
-                                                <xs:enumeration value="X - ausländ. Messnetze"/>
-                                                <xs:enumeration value="Z - BfS (ODL)"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="SampleTypeId">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="L5"/>
-                                        <xs:enumeration value="L51"/>
-                                        <xs:enumeration value="L52"/>
-                                        <xs:enumeration value="L53"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="SampleType">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="L5 - Niederschlag"/>
-                                                <xs:enumeration value="L51 - Niederschlag (Aktivitätskonzentration)"/>
-                                                <xs:enumeration value="L52 - nasse Niederschläge (Deposition)"/>
-                                                <xs:enumeration value="L53 - trockene Niederschläge (Deposition)"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="Dom">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="Gamma-Spektrometrie"/>
-                                                <xs:enumeration value="Gesamt-Beta / Gesamt-Alpha"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element minOccurs="0" name="DataType">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="LaDa"/>
-                                                <xs:enumeration value="OnMon"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element minOccurs="0" name="LegalBase">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="§2"/>
-                                        <xs:enumeration value="§3"/>
-                                        <xs:enumeration value="§7"/>
-                                        <xs:enumeration value="DENSE"/>
-                                        <xs:enumeration value="Europa"/>
-                                        <xs:enumeration value="KFÜ"/>
-                                        <xs:enumeration value="Land"/>
-                                        <xs:enumeration value="REI-E"/>
-                                        <xs:enumeration value="REI-I"/>
-                                        <xs:enumeration value="SPARSE"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element minOccurs="0" name="MeasuringProgram">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="Intensivmessprogramm"/>
-                                        <xs:enumeration value="REI"/>
-                                        <xs:enumeration value="Routinemessprogramm"/>
-                                        <xs:enumeration value="Routinemeßprogramm"/>
-                                        <xs:enumeration value="Spontanproben Bund"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element minOccurs="0" name="Status">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="0 - nicht vergeben"/>
-                                        <xs:enumeration value="1 - plausibel"/>
-                                        <xs:enumeration value="2 - nicht repräsentativ"/>
-                                        <xs:enumeration value="3 - nicht plausibel"/>
-                                        <xs:enumeration value="4 - Rückfrage abgesetzt"/>
-                                        <xs:enumeration value="6 - Rücklauf bearbeitet"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="SamplingBegin" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="SamplingEnd" type="xs:dateTime">
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element default="false" minOccurs="0" name="IsRodos" type="xs:boolean">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="ProjectName" type="xs:string">
-                            </xs:element>
-                            <xs:element name="ReportID" type="xs:string">
-                            </xs:element>
-                            <xs:element name="ReleaseSite" type="xs:string">
-                            </xs:element>
-                            <xs:element name="ReleaseStart" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="ReleaseStop" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="PrognosisBegin" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="PrognosisEnd" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="NumericWeatherPredictionDate" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="Model" type="xs:string">
-                            </xs:element>
-                            <xs:element name="CalculationDate" type="xs:dateTime">
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element default="false" minOccurs="0" name="IsRei" type="xs:boolean">
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-</xs:schema>
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.bfs.de/IRIX/Extensions/Dokpool" version="1.1" xml:lang="en">
+    <xsd:element name="DokpoolMeta">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" name="Purpose">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <xsd:enumeration value="Standard-Info"/>
+                                    <xsd:enumeration value="Bundesmessnetze"/>
+                                    <xsd:enumeration value="Standard-Info DWD"/>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="DokpoolContentType">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="eventinformation"/>
+                            <xsd:enumeration value="notification"/>
+                            <xsd:enumeration value="nppinformation"/>
+                            <xsd:enumeration value="weatherinformation"/>
+                            <xsd:enumeration value="trajectory"/>
+                            <xsd:enumeration value="nppprojection"/>
+                            <xsd:enumeration value="rodosprojection"/>
+                            <xsd:enumeration value="otherprojection"/>
+                            <xsd:enumeration value="gammadoserate"/>
+                            <xsd:enumeration value="airactivity"/>
+                            <xsd:enumeration value="groundcontamination"/>
+                            <xsd:enumeration value="mresult_feed"/>
+                            <xsd:enumeration value="mresult_food"/>
+                            <xsd:enumeration value="mresult_water"/>
+                            <xsd:enumeration value="situationreport"/>
+                            <xsd:enumeration value="instructions"/>
+                            <xsd:enumeration value="protectiveactions"/>
+                            <xsd:enumeration value="mediarelease"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="ElanMeta" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="IsElan" default="false" minOccurs="0" type="xsd:boolean">
+                            </xsd:element>
+                            <xsd:element default="routinemode" maxOccurs="10" name="Scenario" type="xsd:string">
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="DoksysMeta" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="IsDoksys" default="true" minOccurs="0" type="xsd:boolean">
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="NetworkOperator">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:annotation>
+                                            <xsd:documentation>
+                                                <xsd:enumeration value="U - BfS (ABI)"/>
+                                                <xsd:enumeration value="W - DWD"/>
+                                                <xsd:enumeration value="X - ausländ. Messnetze"/>
+                                                <xsd:enumeration value="Z - BfS (ODL)"/>
+                                            </xsd:documentation>
+                                        </xsd:annotation>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element name="SampleTypeId">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:enumeration value="L5"/>
+                                        <xsd:enumeration value="L51"/>
+                                        <xsd:enumeration value="L52"/>
+                                        <xsd:enumeration value="L53"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element name="SampleType">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:annotation>
+                                            <xsd:documentation>
+                                                <xsd:enumeration value="L5 - Niederschlag"/>
+                                                <xsd:enumeration value="L51 - Niederschlag (Aktivitätskonzentration)"/>
+                                                <xsd:enumeration value="L52 - nasse Niederschläge (Deposition)"/>
+                                                <xsd:enumeration value="L53 - trockene Niederschläge (Deposition)"/>
+                                            </xsd:documentation>
+                                        </xsd:annotation>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element name="Dom">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:annotation>
+                                            <xsd:documentation>
+                                                <xsd:enumeration value="Gamma-Spektrometrie"/>
+                                                <xsd:enumeration value="Gesamt-Beta / Gesamt-Alpha"/>
+                                            </xsd:documentation>
+                                        </xsd:annotation>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="DataType">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:annotation>
+                                            <xsd:documentation>
+                                                <xsd:enumeration value="LaDa"/>
+                                                <xsd:enumeration value="OnMon"/>
+                                            </xsd:documentation>
+                                        </xsd:annotation>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="LegalBase">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:enumeration value="§2"/>
+                                        <xsd:enumeration value="§3"/>
+                                        <xsd:enumeration value="§7"/>
+                                        <xsd:enumeration value="DENSE"/>
+                                        <xsd:enumeration value="Europa"/>
+                                        <xsd:enumeration value="KFÜ"/>
+                                        <xsd:enumeration value="Land"/>
+                                        <xsd:enumeration value="REI-E"/>
+                                        <xsd:enumeration value="REI-I"/>
+                                        <xsd:enumeration value="SPARSE"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="MeasuringProgram">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:enumeration value="Intensivmessprogramm"/>
+                                        <xsd:enumeration value="REI"/>
+                                        <xsd:enumeration value="Routinemessprogramm"/>
+                                        <xsd:enumeration value="Routinemeßprogramm"/>
+                                        <xsd:enumeration value="Spontanproben Bund"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element minOccurs="0" name="Status">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:enumeration value="0 - nicht vergeben"/>
+                                        <xsd:enumeration value="1 - plausibel"/>
+                                        <xsd:enumeration value="2 - nicht repräsentativ"/>
+                                        <xsd:enumeration value="3 - nicht plausibel"/>
+                                        <xsd:enumeration value="4 - Rückfrage abgesetzt"/>
+                                        <xsd:enumeration value="6 - Rücklauf bearbeitet"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element name="SamplingBegin" type="xsd:dateTime">
+                            </xsd:element>
+                            <xsd:element name="SamplingEnd" type="xsd:dateTime">
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="RodosMeta" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="IsRodos" minOccurs="0" type="xsd:boolean">
+                            </xsd:element>
+                            <xsd:element name="ProjectName" type="xsd:string">
+                            </xsd:element>
+                            <xsd:element name="ReportID" type="xsd:string">
+                            </xsd:element>
+                            <xsd:element name="ReleaseSite" type="xsd:string">
+                            </xsd:element>
+                            <xsd:element name="ReleaseStart" type="xsd:dateTime">
+                            </xsd:element>
+                            <xsd:element name="ReleaseStop" type="xsd:dateTime">
+                            </xsd:element>
+                            <xsd:element name="PrognosisBegin" type="xsd:dateTime">
+                            </xsd:element>
+                            <xsd:element name="PrognosisEnd" type="xsd:dateTime">
+                            </xsd:element>
+                            <xsd:element name="NumericWeatherPredictionDate" type="xsd:dateTime">
+                            </xsd:element>
+                            <xsd:element name="Model" type="xsd:string">
+                            </xsd:element>
+                            <xsd:element name="CalculationDate" type="xsd:dateTime">
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="ReiMeta">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="IsRei" minOccurs="0" default="false" type="xsd:boolean">
+                            </xsd:element>
+                            <xsd:element default="TestREI" minOccurs="0" name="ReiInfo" type="xsd:string">
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
