@@ -161,28 +161,26 @@
                 <xs:element default="false" minOccurs="0" name="IsRodos" type="xs:boolean">
                     <xs:complexType>
                         <xs:sequence>
-
-                            <xs:element name="ProjectionID" type="xs:string">
+                            <xs:element name="ProjectName" type="xs:string">
                             </xs:element>
-
-                            <xs:element name="ReleaseLocation" type="xs:string">
+                            <xs:element name="ReportID" type="xs:string">
                             </xs:element>
-
+                            <xs:element name="ReleaseSite" type="xs:string">
+                            </xs:element>
                             <xs:element name="ReleaseStart" type="xs:dateTime">
                             </xs:element>
-
                             <xs:element name="ReleaseStop" type="xs:dateTime">
                             </xs:element>
-
-                            <xs:element name="ProjectionBegin" type="xs:dateTime">
+                            <xs:element name="PrognosisBegin" type="xs:dateTime">
                             </xs:element>
-
-                            <xs:element name="ProjectionEnd" type="xs:dateTime">
+                            <xs:element name="PrognosisEnd" type="xs:dateTime">
                             </xs:element>
-
-                            <xs:element name="WetherProjectionDate" type="xs:dateTime">
+                            <xs:element name="NumericWeatherPredictionDate" type="xs:dateTime">
                             </xs:element>
-
+                            <xs:element name="Model" type="xs:string">
+                            </xs:element>
+                            <xs:element name="CalculationDate" type="xs:dateTime">
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
