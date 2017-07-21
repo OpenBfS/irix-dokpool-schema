@@ -49,6 +49,51 @@
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
+        <xs:element name="DokpoolName" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="bund"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="DokpoolGroupFolder" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="bund_e-rb"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="DokpoolPrivateFolder" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="rb-fr"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="DokpoolTransferFolder" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="bund_transfer"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
         <xs:element default="false" name="IsElan" type="xs:boolean" minOccurs="0">
         </xs:element>
 
