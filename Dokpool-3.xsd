@@ -106,7 +106,7 @@
         <xs:element default="false" name="IsRei" type="xs:boolean" minOccurs="0">
         </xs:element>
 
-        <xs:element name="DokpoolScenario" minOccurs="0">
+        <xs:element name="ElanScenario" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
               <xs:annotation>
