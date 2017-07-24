@@ -106,6 +106,20 @@
         <xs:element default="false" name="IsRei" type="xs:boolean" minOccurs="0">
         </xs:element>
 
+        <xs:element name="DokpoolScenario" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="all"/>
+                  <xs:enumeration value="routine"/>
+                  <xs:enumeration value="emergency_example_01"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
         <xs:element name="NetworkOperator" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
