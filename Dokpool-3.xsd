@@ -106,18 +106,12 @@
         <xs:element default="false" name="IsRei" type="xs:boolean" minOccurs="0">
         </xs:element>
 
-        <xs:element name="ElanScenario" minOccurs="0">
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:annotation>
-                <xs:documentation>
-                  <xs:enumeration value="all"/>
-                  <xs:enumeration value="routine"/>
-                  <xs:enumeration value="emergency_example_01"/>
-                </xs:documentation>
-              </xs:annotation>
-            </xs:restriction>
-          </xs:simpleType>
+        <xs:element name="ElanScenarios" type="ElanScenariosType" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              List of ELAN Scenarios this report is relevant for.
+            </xs:documentation>
+          </xs:annotation>
         </xs:element>
 
         <xs:element name="NetworkOperator" minOccurs="0">
@@ -240,4 +234,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:complexType name="ElanScenariosType">
+    <xs:sequence>
+      <xs:element name="ElanScenario" type="id:ElanScenarioType" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Descriptor of a scenario this report is relevant for.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>
