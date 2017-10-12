@@ -106,7 +106,7 @@
         <xs:element default="false" name="IsRei" type="xs:boolean" minOccurs="0">
         </xs:element>
 
-        <xs:element name="ElanScenarios">
+        <xs:element name="ElanScenarios" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
               <xs:element name="ElanScenario">
