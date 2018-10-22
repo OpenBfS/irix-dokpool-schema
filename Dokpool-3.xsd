@@ -12,9 +12,10 @@
             <xs:restriction base="xs:string">
               <xs:annotation>
                 <xs:documentation>
-                  <xs:enumeration value="Standard-Info"/>
-                  <xs:enumeration value="Bundesmessnetze"/>
+                  <xs:enumeration value="Standard-Info Bundesmessnetze"/>
+                  <xs:enumeration value="Standard-Info Land"/>
                   <xs:enumeration value="Standard-Info DWD"/>
+                  <xs:enumeration value="PEP"/>
                 </xs:documentation>
               </xs:annotation>
             </xs:restriction>
@@ -131,10 +132,10 @@
             <xs:restriction base="xs:string">
               <xs:annotation>
                 <xs:documentation>
-                  <xs:enumeration value="U - BfS (ABI)"/>
-                  <xs:enumeration value="W - DWD"/>
-                  <xs:enumeration value="X - ausländ. Messnetze"/>
-                  <xs:enumeration value="Z - BfS (ODL)"/>
+                  <xs:enumeration value="BfS (ABI)"/>
+                  <xs:enumeration value="DWD"/>
+                  <xs:enumeration value="ausländ. Messnetze"/>
+                  <xs:enumeration value="BfS (ODL)"/>
                 </xs:documentation>
               </xs:annotation>
             </xs:restriction>
@@ -161,10 +162,10 @@
             <xs:restriction base="xs:string">
               <xs:annotation>
                 <xs:documentation>
-                  <xs:enumeration value="L5 - Niederschlag"/>
-                  <xs:enumeration value="L51 - Niederschlag (Aktivitätskonzentration)"/>
-                  <xs:enumeration value="L52 - nasse Niederschläge (Deposition)"/>
-                  <xs:enumeration value="L53 - trockene Niederschläge (Deposition)"/>
+                  <xs:enumeration value="Niederschlag"/>
+                  <xs:enumeration value="Niederschlag (Aktivitätskonzentration)"/>
+                  <xs:enumeration value="nasse Niederschläge (Deposition)"/>
+                  <xs:enumeration value="trockene Niederschläge (Deposition)"/>
                 </xs:documentation>
               </xs:annotation>
             </xs:restriction>
@@ -197,19 +198,99 @@
           </xs:simpleType>
         </xs:element>
 
+       <xs:element name="Area" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="DE"/>
+                  <xs:enumeration value="ME"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+       <xs:element name="Duration" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="1h"/>
+                  <xs:enumeration value="1d"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="OperationMode" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="Routine"/>
+                  <xs:enumeration value="Intensiv"/>
+                  <xs:enumeration value="Übung"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="Type" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="nass"/>
+                  <xs:enumeration value="trocken"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+          <xs:element name="TrajectoryStartLocation" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+          </xs:restriction>
+          </xs:simpleType>
+        </xs:element>   
+
+        <xs:element name="TrajectoryEndLocation" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+           </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="TrajectoryStartTime" type="xs:dateTime">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="TrajectoryEndTime" type="xs:dateTime">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
         <xs:element name="LegalBase" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
-              <xs:enumeration value="§2"/>
-              <xs:enumeration value="§3"/>
-              <xs:enumeration value="§7"/>
+              <xs:enumeration value="AVV IMIS"/>
               <xs:enumeration value="DENSE"/>
-              <xs:enumeration value="Europa"/>
+              <xs:enumeration value="EURDEP"/>
               <xs:enumeration value="KFÜ"/>
               <xs:enumeration value="Land"/>
               <xs:enumeration value="REI-E"/>
               <xs:enumeration value="REI-I"/>
               <xs:enumeration value="SPARSE"/>
+              <xs:enumeration value="IRMIS"/>
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
@@ -228,12 +309,14 @@
         <xs:element name="Status" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
-              <xs:enumeration value="0 - nicht vergeben"/>
-              <xs:enumeration value="1 - plausibel"/>
-              <xs:enumeration value="2 - nicht repräsentativ"/>
-              <xs:enumeration value="3 - nicht plausibel"/>
-              <xs:enumeration value="4 - Rückfrage abgesetzt"/>
-              <xs:enumeration value="6 - Rücklauf bearbeitet"/>
+              <xs:enumeration value="nicht vergeben"/>
+              <xs:enumeration value="plausibel"/>
+              <xs:enumeration value="nicht repräsentativ"/>
+              <xs:enumeration value="nicht plausibel"/>
+              <xs:enumeration value="Rückfrage abgesetzt"/>
+              <xs:enumeration value="Rücklauf bearbeitet"/>
+              <xs:enumeration value="geprüft"/>
+              <xs:enumeration value="ungeprüftl"/>
             </xs:restriction>
           </xs:simpleType>
         </xs:element>
@@ -243,6 +326,114 @@
 
         <xs:element name="SamplingEnd" type="xs:dateTime">
         </xs:element>
+
+        <xs:element name="calculationDate" type="xs:dateTime">
+        </xs:element>
+
+        <xs:element name="numericWeatherPredictionDate" type="xs:dateTime">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+
+        <xs:element name="model" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="Rimpuff"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="prognosisBegin" type="xs:dateTime">
+        </xs:element>
+
+        <xs:element name="prognosisEnd" type="xs:dateTime">
+        </xs:element>
+
+        <xs:element name="prognosisForm" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="?"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="prognosisType" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="?"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="projectName" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="Fessenheim2018"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="projectUser" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="ruf-m"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="releaseSite" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="Fessenheim"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="reportId" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  <xs:enumeration value="123456"/>
+                </xs:documentation>
+              </xs:annotation>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="releaseStart" type="xs:dateTime">
+        </xs:element>
+
+        <xs:element name="releaseStop" type="xs:dateTime">
+        </xs:element>
+
       </xs:sequence>
     </xs:complexType>
   </xs:element>
