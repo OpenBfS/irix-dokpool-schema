@@ -327,10 +327,10 @@
         <xs:element name="SamplingEnd" type="xs:dateTime">
         </xs:element>
 
-        <xs:element name="calculationDate" type="xs:dateTime">
+        <xs:element name="CalculationDate" type="xs:dateTime">
         </xs:element>
 
-        <xs:element name="numericWeatherPredictionDate" type="xs:dateTime">
+        <xs:element name="NumericWeatherPredictionDate" type="xs:dateTime">
           <xs:simpleType>
             <xs:restriction base="xs:string">
             </xs:restriction>
@@ -338,7 +338,7 @@
         </xs:element>
 
 
-        <xs:element name="model" minOccurs="0">
+        <xs:element name="Model" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
               <xs:annotation>
@@ -350,13 +350,13 @@
           </xs:simpleType>
         </xs:element>
 
-        <xs:element name="prognosisBegin" type="xs:dateTime">
+        <xs:element name="PrognosisBegin" type="xs:dateTime">
         </xs:element>
 
-        <xs:element name="prognosisEnd" type="xs:dateTime">
+        <xs:element name="PrognosisEnd" type="xs:dateTime">
         </xs:element>
 
-        <xs:element name="prognosisForm" minOccurs="0">
+        <xs:element name="PrognosisForm" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
               <xs:annotation>
@@ -368,7 +368,7 @@
           </xs:simpleType>
         </xs:element>
 
-        <xs:element name="prognosisType" minOccurs="0">
+        <xs:element name="PrognosisType" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
               <xs:annotation>
@@ -380,7 +380,7 @@
           </xs:simpleType>
         </xs:element>
 
-        <xs:element name="projectName" minOccurs="0">
+        <xs:element name="ProjectName" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
               <xs:annotation>
@@ -392,7 +392,7 @@
           </xs:simpleType>
         </xs:element>
 
-        <xs:element name="projectUser" minOccurs="0">
+        <xs:element name="ProjectUser" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
               <xs:annotation>
@@ -404,7 +404,7 @@
           </xs:simpleType>
         </xs:element>
 
-        <xs:element name="releaseSite" minOccurs="0">
+        <xs:element name="ReleaseSite" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
               <xs:annotation>
@@ -416,7 +416,7 @@
           </xs:simpleType>
         </xs:element>
 
-        <xs:element name="reportId" minOccurs="0">
+        <xs:element name="ReportId" minOccurs="0">
           <xs:simpleType>
             <xs:restriction base="xs:string">
               <xs:annotation>
@@ -428,10 +428,10 @@
           </xs:simpleType>
         </xs:element>
 
-        <xs:element name="releaseStart" type="xs:dateTime">
+        <xs:element name="ReleaseStart" type="xs:dateTime">
         </xs:element>
 
-        <xs:element name="releaseStop" type="xs:dateTime">
+        <xs:element name="ReleaseStop" type="xs:dateTime">
         </xs:element>
 
       </xs:sequence>
