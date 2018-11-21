@@ -174,6 +174,10 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
+                            <xs:element name="SamplingBegin" type="xs:dateTime">
+                            </xs:element>
+                            <xs:element name="SamplingEnd" type="xs:dateTime">
+                            </xs:element>
                             <xs:element name="Dom">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -250,6 +254,11 @@
                             <xs:element name="TrajectoryStartLocation" minOccurs="0">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <xs:enumeration value="foo"/>
+                                            </xs:documentation>
+                                        </xs:annotation>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
@@ -260,16 +269,8 @@
                                 </xs:simpleType>
                             </xs:element>
                             <xs:element name="TrajectoryStartTime" type="xs:dateTime">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                    </xs:restriction>
-                                </xs:simpleType>
                             </xs:element>
                             <xs:element name="TrajectoryEndTime" type="xs:dateTime">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                    </xs:restriction>
-                                </xs:simpleType>
                             </xs:element>
                             <xs:element name="LegalBase" minOccurs="0">
                                 <xs:simpleType>
@@ -339,13 +340,21 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="ReportRunID" type="GenericUUIDType">
-                                <xs:annotation>
-                                    <xs:documentation xml:lang="en">
-                                        Unique identifier of this RODOS Run uses GenericUUIDType
-                                        <xs:enumeration value="a0cd758c-0aa9-155b-685e-bbe7048a57a5"/>
-                                    </xs:documentation>
-                                </xs:annotation>
+                            <xs:element name="ReportRunID">
+                                <xs:simpleType>
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            The UUID is defined as a 32 hexadecimal digit, displayed in
+                                            5 groups separated by hypens
+                                            in the form 8-4-4-4-12.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                    <xs:restriction base="xs:token">
+                                        <xs:length value="36"/>
+                                        <xs:pattern
+                                                value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
                             </xs:element>
                             <xs:element name="Model" minOccurs="0">
                                 <xs:simpleType>
@@ -382,7 +391,8 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="ProjectName" minOccurs="0">
+                            <!-- FIXME use ProjectName instead ?? -->
+                            <xs:element name="Projectname" minOccurs="0">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:annotation>
@@ -595,21 +605,6 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
-    <xs:simpleType name="GenericUUIDType">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">
-                The UUID is defined as a 32 hexadecimal digit, displayed in
-                5 groups separated by hypens
-                in the form 8-4-4-4-12.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:token">
-            <xs:length value="36"/>
-            <xs:pattern
-                    value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
-        </xs:restriction>
-    </xs:simpleType>
 </xs:schema>
 
 
