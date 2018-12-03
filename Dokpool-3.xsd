@@ -452,7 +452,7 @@
                                         </xs:element>
                                         <xs:element name="Date" type="xs:dateTime">
                                         </xs:element>
-                                        <xs:element name="BeginDate" type="xs:dateTime">
+                                        <xs:element name="Begin" type="xs:dateTime">
                                         </xs:element>
                                         <xs:element name="End" type="xs:dateTime">
                                         </xs:element>
