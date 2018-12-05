@@ -576,11 +576,12 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element default="false" name="Revision" type="xs:boolean" minOccurs="0"/>
-                            <xs:element name="Databasis">
+                            <xs:element name="LegalBase">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:enumeration value="REI-E"/>
                                         <xs:enumeration value="REI-I"/>
+                                        <xs:enumeration value="REI-E und REI-I"/>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
@@ -596,7 +597,7 @@
                                     <xs:restriction base="xs:integer"/>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Quartal">
+                            <xs:element name="Quarter">
                                 <xs:simpleType>
                                     <xs:annotation>
                                         <xs:documentation xml:lang="en">
@@ -607,7 +608,34 @@
                                     <xs:restriction base="xs:integer"/>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Medium">
+                            <xs:element name="Period">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Y"/>
+                                        <xs:enumeration value="Q1"/>
+                                        <xs:enumeration value="Q2"/>
+                                        <xs:enumeration value="Q3"/>
+                                        <xs:enumeration value="Q4"/>
+                                        <xs:enumeration value="M1"/>
+                                        <xs:enumeration value="M2"/>
+                                        <xs:enumeration value="M3"/>
+                                        <xs:enumeration value="M4"/>
+                                        <xs:enumeration value="M5"/>
+                                        <xs:enumeration value="M6"/>
+                                        <xs:enumeration value="M7"/>
+                                        <xs:enumeration value="M8"/>
+                                        <xs:enumeration value="M9"/>
+                                        <xs:enumeration value="M10"/>
+                                        <xs:enumeration value="M11"/>
+                                        <xs:enumeration value="M12"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="SamplingBegin" type="xs:dateTime">
+                            </xs:element>
+                            <xs:element name="SamplingEnd" type="xs:dateTime">
+                            </xs:element>
+                            <xs:element name="SampleType">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:annotation>
@@ -644,7 +672,7 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="UOOZB">
+                            <xs:element name="Location">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:annotation>
