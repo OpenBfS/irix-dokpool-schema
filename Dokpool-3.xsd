@@ -515,26 +515,22 @@
                                                             <xs:sequence>
                                                                 <xs:element name="Noble">
                                                                     <xs:simpleType>
-                                                                        <xs:restriction
-                                                                                base="xs:float"></xs:restriction>
+                                                                        <xs:restriction base="xs:float"/>
                                                                     </xs:simpleType>
                                                                 </xs:element>
                                                                 <xs:element name="Iodine">
                                                                     <xs:simpleType>
-                                                                        <xs:restriction
-                                                                                base="xs:float"></xs:restriction>
+                                                                        <xs:restriction base="xs:float"/>
                                                                     </xs:simpleType>
                                                                 </xs:element>
                                                                 <xs:element name="Aerosol">
                                                                     <xs:simpleType>
-                                                                        <xs:restriction
-                                                                                base="xs:float"></xs:restriction>
+                                                                        <xs:restriction base="xs:float"/>
                                                                     </xs:simpleType>
                                                                 </xs:element>
                                                                 <xs:element name="Special">
                                                                     <xs:simpleType>
-                                                                        <xs:restriction
-                                                                                base="xs:float"></xs:restriction>
+                                                                        <xs:restriction base="xs:float"/>
                                                                     </xs:simpleType>
                                                                 </xs:element>
                                                             </xs:sequence>
@@ -556,14 +552,12 @@
                                                                 </xs:element>
                                                                 <xs:element name="Longitude">
                                                                     <xs:simpleType>
-                                                                        <xs:restriction
-                                                                                base="xs:float"></xs:restriction>
+                                                                        <xs:restriction base="xs:float"/>
                                                                     </xs:simpleType>
                                                                 </xs:element>
                                                                 <xs:element name="Latitude">
                                                                     <xs:simpleType>
-                                                                        <xs:restriction
-                                                                                base="xs:float"></xs:restriction>
+                                                                        <xs:restriction base="xs:float"/>
                                                                     </xs:simpleType>
                                                                 </xs:element>
                                                             </xs:sequence>
@@ -578,10 +572,96 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-
                 <xs:element name="REI" minOccurs="0">
                     <xs:complexType>
                         <xs:sequence>
+                            <xs:element default="false" name="Revision" type="xs:boolean" minOccurs="0"/>
+                            <xs:element name="Databasis">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="REI-E"/>
+                                        <xs:enumeration value="REI-I"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Year">
+                                <xs:simpleType>
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            Jahr (Mitte Sammelzeitraum): z.B. „2009“
+                                            Wäre hier nicht ein duration oder "gYear"
+                                            eventuell sogar gYearMonth besser?
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                    <xs:restriction base="xs:integer"/>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Quartal">
+                                <xs:simpleType>
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            Quartal(Mitte Sammelzeitraum): z.B. „1“
+                                            Wäre hier nicht ein duration oder "gMonth"
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                    <xs:restriction base="xs:integer"/>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Medium">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                String oder Liste ?? z.B. „Abwasser“ und/oder „Fortluft“
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="NetworkOperator" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <xs:enumeration value="Bayern"/>
+                                                <xs:enumeration value="DWD"/>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="PDFVersion">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="PDF/A-1b"/>
+                                        <xs:enumeration value="PDF/A-1a"/>
+                                        <xs:enumeration value="PDF/A-2a"/>
+                                        <xs:enumeration value="PDF/A-2b"/>
+                                        <xs:enumeration value="PDF/A-2u"/>
+                                        <xs:enumeration value="PDF/A-3a"/>
+                                        <xs:enumeration value="PDF/A-3b"/>
+                                        <xs:enumeration value="PDF/A-3u"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="UOOZB">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                z.B. „KKW Grafenrheinfeld“
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Purpose" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="REI"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
                             <xs:element name="SigningComment" minOccurs="0">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -600,8 +680,6 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-
-
             </xs:sequence>
         </xs:complexType>
     </xs:element>
