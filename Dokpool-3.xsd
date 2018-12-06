@@ -307,7 +307,7 @@
                                         <xs:enumeration value="Rückfrage abgesetzt"/>
                                         <xs:enumeration value="Rücklauf bearbeitet"/>
                                         <xs:enumeration value="geprüft"/>
-                                        <xs:enumeration value="ungeprüftl"/>
+                                        <xs:enumeration value="ungeprüft"/>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
@@ -612,6 +612,8 @@
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:enumeration value="Y"/>
+                                        <xs:enumeration value="H1"/>
+                                        <xs:enumeration value="H2"/>
                                         <xs:enumeration value="Q1"/>
                                         <xs:enumeration value="Q2"/>
                                         <xs:enumeration value="Q3"/>
