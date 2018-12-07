@@ -106,14 +106,13 @@
                 </xs:element>
                 <xs:element default="false" name="IsRei" type="xs:boolean" minOccurs="0">
                 </xs:element>
-
                 <xs:element name="ELAN" minOccurs="0">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="ElanScenarios" minOccurs="0" maxOccurs="1">
+                            <xs:element name="Scenarios" minOccurs="0" maxOccurs="1">
                                 <xs:complexType>
                                     <xs:sequence minOccurs="0" maxOccurs="unbounded">
-                                        <xs:element name="ElanScenario">
+                                        <xs:element name="Scenario">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:annotation>
@@ -132,7 +131,6 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-
                 <xs:element name="DOKSYS" minOccurs="0">
                     <xs:complexType>
                         <xs:sequence>
