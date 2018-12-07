@@ -7,20 +7,6 @@
     <xs:element name="DokpoolMeta">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Purpose" minOccurs="0">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    <xs:enumeration value="Standard-Info Bundesmessnetze"/>
-                                    <xs:enumeration value="Standard-Info Land"/>
-                                    <xs:enumeration value="Standard-Info DWD"/>
-                                    <xs:enumeration value="PEP"/>
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
                 <xs:element name="DokpoolContentType">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
@@ -93,6 +79,24 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
+                <xs:element name="Subjects" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="Subject">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <xs:enumeration value="FooSubject"/>
+                                                <xs:enumeration value="Bar Subject"/>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
 
                 <xs:element default="false" name="IsElan" type="xs:boolean" minOccurs="0">
                 </xs:element>
@@ -132,6 +136,21 @@
                 <xs:element name="DOKSYS" minOccurs="0">
                     <xs:complexType>
                         <xs:sequence>
+                            <xs:element name="Purpose" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <xs:enumeration value="Standard-Info Bundesmessnetze"/>
+                                                <xs:enumeration value="Standard-Info Land"/>
+                                                <xs:enumeration value="Standard-Info DWD"/>
+                                                <xs:enumeration value="PEP"/>
+                                                <xs:enumeration value="REI-Bericht"/>
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
                             <xs:element name="NetworkOperator" minOccurs="0">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -428,6 +447,17 @@
                             <xs:element name="Prognosis" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence>
+                                        <xs:element name="Type" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <xs:enumeration value="DWD"/>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
                                         <xs:element name="Provider" minOccurs="0">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
@@ -560,6 +590,11 @@
                                                                         <xs:restriction base="xs:float"/>
                                                                     </xs:simpleType>
                                                                 </xs:element>
+                                                                <xs:element name="VentHeight">
+                                                                    <xs:simpleType>
+                                                                        <xs:restriction base="xs:float"/>
+                                                                    </xs:simpleType>
+                                                                </xs:element>
                                                             </xs:sequence>
                                                         </xs:complexType>
                                                     </xs:element>
@@ -575,14 +610,9 @@
                 <xs:element name="REI" minOccurs="0">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element default="false" name="Revision" type="xs:boolean" minOccurs="0"/>
-                            <xs:element name="LegalBase">
+                            <xs:element name="Revision" minOccurs="0">
                                 <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="REI-E"/>
-                                        <xs:enumeration value="REI-I"/>
-                                        <xs:enumeration value="REI-E und REI-I"/>
-                                    </xs:restriction>
+                                    <xs:restriction base="xs:integer"/>
                                 </xs:simpleType>
                             </xs:element>
                             <xs:element name="Year">
@@ -633,32 +663,19 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="SamplingBegin" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="SamplingEnd" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="SampleType">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                String oder Liste ?? z.B. „Abwasser“ und/oder „Fortluft“
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="NetworkOperator" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="Bayern"/>
-                                                <xs:enumeration value="DWD"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
+                            <xs:element name="Media" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="Medium">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="Abwasser"/>
+                                                    <xs:enumeration value="Fortluft"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
                             </xs:element>
                             <xs:element name="PDFVersion">
                                 <xs:simpleType>
@@ -682,13 +699,6 @@
                                                 z.B. „KKW Grafenrheinfeld“
                                             </xs:documentation>
                                         </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="Purpose" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="REI"/>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
