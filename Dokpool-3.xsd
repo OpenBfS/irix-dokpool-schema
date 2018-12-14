@@ -79,6 +79,17 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
+                <xs:element name="DokpoolDocumentOwner" minOccurs="0">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <xs:enumeration value="username"/>
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
                 <xs:element name="Subjects" minOccurs="0" maxOccurs="1">
                     <xs:complexType>
                         <xs:sequence minOccurs="0" maxOccurs="unbounded">
