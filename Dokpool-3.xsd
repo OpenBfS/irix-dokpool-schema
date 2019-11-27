@@ -108,7 +108,6 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-
                 <xs:element default="false" name="IsElan" type="xs:boolean" minOccurs="0">
                 </xs:element>
                 <xs:element default="true" name="IsDoksys" type="xs:boolean" minOccurs="0">
@@ -342,7 +341,6 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-
                 <xs:element name="RODOS" minOccurs="0">
                     <xs:complexType>
                         <xs:sequence>
@@ -636,17 +634,6 @@
                                     <xs:restriction base="xs:integer"/>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Quarter">
-                                <xs:simpleType>
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="en">
-                                            Quartal(Mitte Sammelzeitraum): z.B. „1“
-                                            Wäre hier nicht ein duration oder "gMonth"
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                    <xs:restriction base="xs:integer"/>
-                                </xs:simpleType>
-                            </xs:element>
                             <xs:element name="Period">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -672,21 +659,89 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Media" minOccurs="0" maxOccurs="1">
+                            <xs:element name="NuclearInstallation" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                z.B. "U01B KKW Krümmel"
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Medium" minOccurs="0" maxOccurs="1">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Abwasser"/>
+                                        <xs:enumeration value="Fortluft"/>
+                                        <xs:enumeration value="Abwasser/Fortluft"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="ReiLegalBases" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence minOccurs="0" maxOccurs="unbounded">
-                                        <xs:element name="Medium">
+                                        <xs:element name="ReiLegalBase">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
-                                                    <xs:enumeration value="Abwasser"/>
-                                                    <xs:enumeration value="Fortluft"/>
+                                                    <xs:enumeration value="REI-E"/>
+                                                    <xs:enumeration value="REI-I"/>
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="PDFVersion">
+                            <xs:element name="Origin" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="unabhängige Messstelle"/>
+                                        <xs:enumeration value="Genehmigungsinhaber"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="MStIDs" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="MStID">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            Id of the Monitoring station/office
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Authority" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Baden-Württemberg"/>
+                                        <xs:enumeration value="Bayern"/>
+                                        <xs:enumeration value="Berlin"/>
+                                        <xs:enumeration value="Brandenburg"/>
+                                        <xs:enumeration value="Bremen"/>
+                                        <xs:enumeration value="Hamburg"/>
+                                        <xs:enumeration value="Hessen"/>
+                                        <xs:enumeration value="Mecklenburg-Vorpommern"/>
+                                        <xs:enumeration value="Niedersachsen"/>
+                                        <xs:enumeration value="Nordrhein-Westfalen"/>
+                                        <xs:enumeration value="Rheinland-Pfalz"/>
+                                        <xs:enumeration value="Saarland"/>
+                                        <xs:enumeration value="Sachsen"/>
+                                        <xs:enumeration value="Sachsen-Anhalt"/>
+                                        <xs:enumeration value="Schleswig-Holstein"/>
+                                        <xs:enumeration value="Thüringen"/>
+                                        <xs:enumeration value="Endlager (Bundesaufsicht)"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="PDFVersion" minOccurs="0">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:enumeration value="PDF/A-1b"/>
@@ -697,17 +752,6 @@
                                         <xs:enumeration value="PDF/A-3a"/>
                                         <xs:enumeration value="PDF/A-3b"/>
                                         <xs:enumeration value="PDF/A-3u"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="Location">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                z.B. „KKW Grafenrheinfeld“
-                                            </xs:documentation>
-                                        </xs:annotation>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
