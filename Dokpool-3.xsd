@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://www.bfs.de/IRIX/Extensions/Dokpool"
            elementFormDefault="qualified"
-           version="2.4.0"
+           version="2.5.dev1"
            xml:lang="en">
     <xs:element name="DokpoolMeta">
         <xs:complexType>
