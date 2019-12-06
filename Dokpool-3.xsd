@@ -659,16 +659,22 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="NuclearInstallation" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                z.B. "U01B KKW Krümmel"
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
+                            <xs:element name="NuclearInstallations" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="NuclearInstallation">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            z.B. "U01B KKW Krümmel"
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
                             </xs:element>
                             <xs:element name="Medium" minOccurs="0" maxOccurs="1">
                                 <xs:simpleType>
@@ -693,13 +699,19 @@
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            <xs:element name="Origin" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="unabhängige Messstelle"/>
-                                        <xs:enumeration value="Genehmigungsinhaber"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
+                            <xs:element name="Origins" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="Origin">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="unabhängige Messstelle"/>
+                                                    <xs:enumeration value="Genehmigungsinhaber"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
                             </xs:element>
                             <xs:element name="MStIDs" minOccurs="0">
                                 <xs:complexType>
@@ -710,6 +722,17 @@
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             Id of the Monitoring station/office
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="MStName" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            Name of the Monitoring station/office
                                                         </xs:documentation>
                                                     </xs:annotation>
                                                 </xs:restriction>
