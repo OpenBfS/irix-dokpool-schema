@@ -716,27 +716,33 @@
                             <xs:element name="MStIDs" minOccurs="0">
                                 <xs:complexType>
                                     <xs:sequence minOccurs="0" maxOccurs="unbounded">
-                                        <xs:element name="MStID">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            Id of the Monitoring station/office
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                        <xs:element name="MStName" minOccurs="0">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            Name of the Monitoring station/office
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:restriction>
-                                            </xs:simpleType>
+                                        <xs:element name="MSt" minOccurs="1" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="MStID">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        ID of the Monitoring station/office
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element name="MStName" minOccurs="0">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>
+                                                                        Name of the Monitoring station/office
+                                                                    </xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
                                         </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
