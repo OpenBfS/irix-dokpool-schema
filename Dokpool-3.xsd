@@ -12,24 +12,53 @@
                         <xs:restriction base="xs:string">
                             <xs:annotation>
                                 <xs:documentation>
-                                    <xs:enumeration value="eventinformation"/>
                                     <xs:enumeration value="notification"/>
+                                    <xs:enumeration value="note"/>
+                                    <xs:enumeration value="eventinformation"/>
                                     <xs:enumeration value="nppinformation"/>
                                     <xs:enumeration value="weatherinformation"/>
                                     <xs:enumeration value="trajectory"/>
-                                    <xs:enumeration value="nppprojection"/>
                                     <xs:enumeration value="rodosprojection"/>
                                     <xs:enumeration value="otherprojection"/>
                                     <xs:enumeration value="gammadoserate"/>
+                                    <xs:enumeration value="gammadoserate_timeseries"/>
+                                    <xs:enumeration value="gammadoserate_mobile"/>
                                     <xs:enumeration value="airactivity"/>
+                                    <xs:enumeration value="mresult_insitu"/>
                                     <xs:enumeration value="groundcontamination"/>
-                                    <xs:enumeration value="mresult_feed"/>
                                     <xs:enumeration value="mresult_food"/>
+                                    <xs:enumeration value="mresult_feed"/>
                                     <xs:enumeration value="mresult_water"/>
+                                    <xs:enumeration value="mresult_other"/>
+                                    <xs:enumeration value="mresult_flight"/>
                                     <xs:enumeration value="situationreport"/>
+                                    <xs:enumeration value="sitrep"/>
+                                    <xs:enumeration value="estimation"/>
                                     <xs:enumeration value="instructions"/>
                                     <xs:enumeration value="protectiveactions"/>
                                     <xs:enumeration value="mediarelease"/>
+                                    <xs:enumeration value="information_expert_advisor"/>
+                                    <xs:enumeration value="measurement_order"/>
+                                    <xs:enumeration value="operation_map"/>
+                                    <xs:enumeration value="measurement_requirements"/>
+                                    <xs:enumeration value="note_measurement_teams"/>
+                                    <xs:enumeration value="inquiry_measurement_order"/>
+                                    <xs:enumeration value="info_ecc"/>
+                                    <xs:enumeration value="info_public"/>
+                                    <xs:enumeration value="mediareport"/>
+                                    <xs:enumeration value="lasair_lasat_projection"/>
+                                    <xs:enumeration value="rodosrun_elan"/>
+                                    <xs:enumeration value="mresult_precipitation"/>
+                                    <xs:enumeration value="mresult_traceanalysis"/>
+                                    <xs:enumeration value="mresult_radionuclides"/>
+                                    <xs:enumeration value="mresult_emission"/>
+                                    <xs:enumeration value="textbaustein_ssk"/>
+                                    <xs:enumeration value="beratungsauftrag_bmu"/>
+                                    <xs:enumeration value="rueckfrage_beratungsauftrag_bmu"/>
+                                    <xs:enumeration value="ergebnis_beratungsauftrag_bmu"/>
+                                    <xs:enumeration value="bewertung_ssk"/>
+                                    <xs:enumeration value="lageinformation_ssk"/>
+                                    <xs:enumeration value="massnahmenempfehlung_ssk"/>
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:restriction>
