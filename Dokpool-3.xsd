@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://www.bfs.de/IRIX/Extensions/Dokpool"
            elementFormDefault="qualified"
-           version="2.6.dev1"
+           version="2.6.dev2"
            xml:lang="en">
     <xs:element name="DokpoolMeta">
         <xs:complexType>
@@ -188,47 +188,45 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="NetworkOperator" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="BfS (ABI)"/>
-                                                <xs:enumeration value="DWD"/>
-                                                <xs:enumeration value="ausländ. Messnetze"/>
-                                                <xs:enumeration value="BfS (ODL)"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
+                            <xs:element name="NetworkOperators" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="NetworkOperator" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <xs:enumeration value="BfS (ABI)"/>
+                                                            <xs:enumeration value="DWD"/>
+                                                            <xs:enumeration value="ausländ. Messnetze"/>
+                                                            <xs:enumeration value="BfS (ODL)"/>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
                             </xs:element>
-                            <xs:element name="SampleTypeId">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="L5"/>
-                                                <xs:enumeration value="L51"/>
-                                                <xs:enumeration value="L52"/>
-                                                <xs:enumeration value="L53"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="SampleType">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="Niederschlag"/>
-                                                <xs:enumeration value="Niederschlag (Aktivitätskonzentration)"/>
-                                                <xs:enumeration value="nasse Niederschläge (Deposition)"/>
-                                                <xs:enumeration value="trockene Niederschläge (Deposition)"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
+                            <xs:element name="SampleTypes">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="SampleTypeId">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <xs:enumeration value="L5"/>
+                                                            <xs:enumeration value="L51"/>
+                                                            <xs:enumeration value="L52"/>
+                                                            <xs:enumeration value="L53"/>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
                             </xs:element>
                             <xs:element name="SamplingBegin" type="xs:dateTime">
                             </xs:element>
@@ -246,17 +244,44 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="DataType" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="LaDa"/>
-                                                <xs:enumeration value="OnMon"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
+                            <xs:element name="DataTypes" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="DataType" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            <xs:enumeration value="LaDa"/>
+                                                            <xs:enumeration value="OnMon"/>
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="LegalBases" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="LegalBase" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="AVV IMIS"/>
+                                                    <xs:enumeration value="DENSE"/>
+                                                    <xs:enumeration value="EURDEP"/>
+                                                    <xs:enumeration value="KFÜ"/>
+                                                    <xs:enumeration value="Land"/>
+                                                    <xs:enumeration value="REI-E"/>
+                                                    <xs:enumeration value="REI-I"/>
+                                                    <xs:enumeration value="SPARSE"/>
+                                                    <xs:enumeration value="IRMIS"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
                             </xs:element>
                             <xs:element name="Area" minOccurs="0">
                                 <xs:simpleType>
@@ -327,21 +352,6 @@
                             <xs:element name="TrajectoryStartTime" type="xs:dateTime">
                             </xs:element>
                             <xs:element name="TrajectoryEndTime" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="LegalBase" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="AVV IMIS"/>
-                                        <xs:enumeration value="DENSE"/>
-                                        <xs:enumeration value="EURDEP"/>
-                                        <xs:enumeration value="KFÜ"/>
-                                        <xs:enumeration value="Land"/>
-                                        <xs:enumeration value="REI-E"/>
-                                        <xs:enumeration value="REI-I"/>
-                                        <xs:enumeration value="SPARSE"/>
-                                        <xs:enumeration value="IRMIS"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
                             </xs:element>
                             <xs:element name="MeasuringProgram" minOccurs="0">
                                 <xs:simpleType>
