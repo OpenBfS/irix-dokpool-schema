@@ -429,268 +429,36 @@
                 </xs:element>
                 <xs:element name="RODOS" minOccurs="0">
                     <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="ProjectComment" minOccurs="0">
+                        <xs:all>
+                            <xs:element name="PrognosisType" minOccurs="0">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <xs:enumeration value="FooBar"/>
+                                                <xs:enumeration value="Sonstige Ausbreitungsrechnung"/>
+                                                <xs:enumeration value="Potenziell betroffene Gebiete"/>
+                                                <xs:enumeration value="RODOS Prognose"/>
+                                                <xs:enumeration value="DWD Ausbreitungsrechnung ab Quelle"/>
+                                                <xs:enumeration value="LASAIR/LASAT"/>
+                                                <xs:enumeration value="Default if not specified: Sonstige Ausbreitungsrechnung"/>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Site" minOccurs="0">
+                            <xs:element name="PrognosisForm" minOccurs="0">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                <xs:enumeration value="Fessenheim"/>
+                                                <xs:enumeration value="Routinerechnung"/>
+                                                <xs:enumeration value="Einzelrechnung"/>
                                             </xs:documentation>
                                         </xs:annotation>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="ReportRunID">
-                                <xs:simpleType>
-                                    <xs:annotation>
-                                        <xs:documentation xml:lang="en">
-                                            The UUID is defined as a 32 hexadecimal digit, displayed in
-                                            5 groups separated by hypens
-                                            in the form 8-4-4-4-12.
-                                        </xs:documentation>
-                                    </xs:annotation>
-                                    <xs:restriction base="xs:token">
-                                        <xs:length value="36"/>
-                                        <xs:pattern
-                                                value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="Model" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="Rimpuff"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="CalculationId" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="123456"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="CalculationDate" type="xs:dateTime">
-                            </xs:element>
-                            <xs:element name="CalculationUser" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="ruf-m"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <!-- FIXME use ProjectName instead ?? -->
-                            <xs:element name="Projectname" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="notfallstation-0,25-barakw-nodwd"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="ProjectChain" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                <xs:enumeration value="EmergencyLite"/>
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <!-- FIXME is WorkingMode a enumeration? How about others? -->
-                            <xs:element name="WorkingMode" minOccurs="0">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="Routine"/>
-                                        <xs:enumeration value="Test"/>
-                                        <xs:enumeration value="Exercise"/>
-                                        <xs:enumeration value="Emergency"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="Prognosis" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="Type" minOccurs="0">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <xs:enumeration value="DWD"/>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                        <xs:element name="Provider" minOccurs="0">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <xs:enumeration value="Deutscher_Wetterdienst_DWD"/>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                        <xs:element name="Meteo" minOccurs="0">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <xs:enumeration value="nwp"/>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                        <xs:element name="Date" type="xs:dateTime">
-                                        </xs:element>
-                                        <xs:element name="Begin" type="xs:dateTime">
-                                        </xs:element>
-                                        <xs:element name="End" type="xs:dateTime">
-                                        </xs:element>
-                                        <!-- FIXME generell maxOccurs = 1? -->
-                                        <xs:element name="Dates" minOccurs="0" maxOccurs="1">
-                                            <xs:complexType>
-                                                <xs:sequence minOccurs="0" maxOccurs="unbounded">
-                                                    <xs:element name="Date" type="xs:dateTime"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element name="Sourceterm" minOccurs="0" maxOccurs="unbounded">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="StartRelease" type="xs:dateTime">
-                                        </xs:element>
-                                        <xs:element name="EndRelease" type="xs:dateTime">
-                                        </xs:element>
-                                        <xs:element name="Label" minOccurs="0">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <xs:enumeration
-                                                                    value="Deutscher_Wetterdienst_DWD"/>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                        <!-- FIXME other allowed values for Type ?? -->
-                                        <xs:element name="Type" minOccurs="0">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:enumeration value="normal"/>
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                        <xs:element name="Comment" minOccurs="0">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            <xs:enumeration
-                                                                    value="Nothing happened at this spot in 1745."/>
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>
-                                        <xs:element name="Activity">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="Noble">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:float"/>
-                                                        </xs:simpleType>
-                                                    </xs:element>
-                                                    <xs:element name="Iodine">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:float"/>
-                                                        </xs:simpleType>
-                                                    </xs:element>
-                                                    <xs:element name="Aerosol">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:float"/>
-                                                        </xs:simpleType>
-                                                    </xs:element>
-                                                    <xs:element name="Special">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:float"/>
-                                                        </xs:simpleType>
-                                                    </xs:element>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                        <xs:element name="Block">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="Name">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:string">
-                                                                <xs:annotation>
-                                                                    <xs:documentation>
-                                                                        <xs:enumeration value="FOO-1"/>
-                                                                    </xs:documentation>
-                                                                </xs:annotation>
-                                                            </xs:restriction>
-                                                        </xs:simpleType>
-                                                    </xs:element>
-                                                    <xs:element name="Longitude">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:float"/>
-                                                        </xs:simpleType>
-                                                    </xs:element>
-                                                    <xs:element name="Latitude">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:float"/>
-                                                        </xs:simpleType>
-                                                    </xs:element>
-                                                    <xs:element name="VentHeight">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:float"/>
-                                                        </xs:simpleType>
-                                                    </xs:element>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
+                        </xs:all>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="REI" minOccurs="0">
@@ -861,5 +629,3 @@
         </xs:complexType>
     </xs:element>
 </xs:schema>
-
-
