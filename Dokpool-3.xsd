@@ -179,44 +179,48 @@
                             <xs:element name="NetworkOperator" minOccurs="0" maxOccurs="unbounded">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
-                                        <!-- see LADA Stammdaten netz_betreiber -->
-                                        <xs:enumeration value="01"/>
-                                        <xs:enumeration value="02"/>
-                                        <xs:enumeration value="03"/>
-                                        <xs:enumeration value="04"/>
-                                        <xs:enumeration value="05"/>
-                                        <xs:enumeration value="06"/>
-                                        <xs:enumeration value="07"/>
-                                        <xs:enumeration value="08"/>
-                                        <xs:enumeration value="09"/>
-                                        <xs:enumeration value="10"/>
-                                        <xs:enumeration value="11"/>
-                                        <xs:enumeration value="12"/>
-                                        <xs:enumeration value="13"/>
-                                        <xs:enumeration value="14"/>
-                                        <xs:enumeration value="15"/>
-                                        <xs:enumeration value="16"/>
-                                        <xs:enumeration value="17"/>
-                                        <xs:enumeration value="18"/>
-                                        <xs:enumeration value="19"/>
-                                        <xs:enumeration value="A"/>
-                                        <xs:enumeration value="B"/>
-                                        <xs:enumeration value="D"/>
-                                        <xs:enumeration value="E"/>
-                                        <xs:enumeration value="F"/>
-                                        <xs:enumeration value="G"/>
-                                        <xs:enumeration value="H"/>
-                                        <xs:enumeration value="I"/>
-                                        <xs:enumeration value="L"/>
-                                        <xs:enumeration value="M"/>
-                                        <xs:enumeration value="N"/>
-                                        <xs:enumeration value="PA"/>
-                                        <xs:enumeration value="S"/>
-                                        <xs:enumeration value="T"/>
-                                        <xs:enumeration value="U"/>
-                                        <xs:enumeration value="W"/>
-                                        <xs:enumeration value="X"/>
-                                        <xs:enumeration value="Z"/>
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <!-- see LADA Stammdaten netz_betreiber -->
+                                                <xs:enumeration value="01"/>
+                                                <xs:enumeration value="02"/>
+                                                <xs:enumeration value="03"/>
+                                                <xs:enumeration value="04"/>
+                                                <xs:enumeration value="05"/>
+                                                <xs:enumeration value="06"/>
+                                                <xs:enumeration value="07"/>
+                                                <xs:enumeration value="08"/>
+                                                <xs:enumeration value="09"/>
+                                                <xs:enumeration value="10"/>
+                                                <xs:enumeration value="11"/>
+                                                <xs:enumeration value="12"/>
+                                                <xs:enumeration value="13"/>
+                                                <xs:enumeration value="14"/>
+                                                <xs:enumeration value="15"/>
+                                                <xs:enumeration value="16"/>
+                                                <xs:enumeration value="17"/>
+                                                <xs:enumeration value="18"/>
+                                                <xs:enumeration value="19"/>
+                                                <xs:enumeration value="A"/>
+                                                <xs:enumeration value="B"/>
+                                                <xs:enumeration value="D"/>
+                                                <xs:enumeration value="E"/>
+                                                <xs:enumeration value="F"/>
+                                                <xs:enumeration value="G"/>
+                                                <xs:enumeration value="H"/>
+                                                <xs:enumeration value="I"/>
+                                                <xs:enumeration value="L"/>
+                                                <xs:enumeration value="M"/>
+                                                <xs:enumeration value="N"/>
+                                                <xs:enumeration value="PA"/>
+                                                <xs:enumeration value="S"/>
+                                                <xs:enumeration value="T"/>
+                                                <xs:enumeration value="U"/>
+                                                <xs:enumeration value="W"/>
+                                                <xs:enumeration value="X"/>
+                                                <xs:enumeration value="Z"/>
+                                            </xs:documentation>
+                                        </xs:annotation>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
@@ -251,44 +255,48 @@
                             <xs:element name="MeasurementCategory" minOccurs="0" maxOccurs="unbounded">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
-                                        <!-- see LADA Stammdaten mess_methode -->
-                                        <xs:enumeration value="A1"/>
-                                        <xs:enumeration value="A2"/>
-                                        <xs:enumeration value="A3"/>
-                                        <xs:enumeration value="A4"/>
-                                        <xs:enumeration value="AB"/>
-                                        <xs:enumeration value="AP"/>
-                                        <xs:enumeration value="AU"/>
-                                        <xs:enumeration value="B1"/>
-                                        <xs:enumeration value="B2"/>
-                                        <xs:enumeration value="B3"/>
-                                        <xs:enumeration value="B4"/>
-                                        <xs:enumeration value="B5"/>
-                                        <xs:enumeration value="BC"/>
-                                        <xs:enumeration value="BE"/>
-                                        <xs:enumeration value="BH"/>
-                                        <xs:enumeration value="BS"/>
-                                        <xs:enumeration value="BX"/>
-                                        <xs:enumeration value="D1"/>
-                                        <xs:enumeration value="D2"/>
-                                        <xs:enumeration value="E1"/>
-                                        <xs:enumeration value="G1"/>
-                                        <xs:enumeration value="G2"/>
-                                        <xs:enumeration value="G3"/>
-                                        <xs:enumeration value="G4"/>
-                                        <xs:enumeration value="GI"/>
-                                        <xs:enumeration value="I1"/>
-                                        <xs:enumeration value="I2"/>
-                                        <xs:enumeration value="I3"/>
-                                        <xs:enumeration value="M0"/>
-                                        <xs:enumeration value="M1"/>
-                                        <xs:enumeration value="M2"/>
-                                        <xs:enumeration value="M3"/>
-                                        <xs:enumeration value="O1"/>
-                                        <xs:enumeration value="O2"/>
-                                        <xs:enumeration value="O3"/>
-                                        <xs:enumeration value="S1"/>
-                                        <xs:enumeration value="S4"/>
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <!-- see LADA Stammdaten mess_methode -->
+                                                <xs:enumeration value="A1"/>
+                                                <xs:enumeration value="A2"/>
+                                                <xs:enumeration value="A3"/>
+                                                <xs:enumeration value="A4"/>
+                                                <xs:enumeration value="AB"/>
+                                                <xs:enumeration value="AP"/>
+                                                <xs:enumeration value="AU"/>
+                                                <xs:enumeration value="B1"/>
+                                                <xs:enumeration value="B2"/>
+                                                <xs:enumeration value="B3"/>
+                                                <xs:enumeration value="B4"/>
+                                                <xs:enumeration value="B5"/>
+                                                <xs:enumeration value="BC"/>
+                                                <xs:enumeration value="BE"/>
+                                                <xs:enumeration value="BH"/>
+                                                <xs:enumeration value="BS"/>
+                                                <xs:enumeration value="BX"/>
+                                                <xs:enumeration value="D1"/>
+                                                <xs:enumeration value="D2"/>
+                                                <xs:enumeration value="E1"/>
+                                                <xs:enumeration value="G1"/>
+                                                <xs:enumeration value="G2"/>
+                                                <xs:enumeration value="G3"/>
+                                                <xs:enumeration value="G4"/>
+                                                <xs:enumeration value="GI"/>
+                                                <xs:enumeration value="I1"/>
+                                                <xs:enumeration value="I2"/>
+                                                <xs:enumeration value="I3"/>
+                                                <xs:enumeration value="M0"/>
+                                                <xs:enumeration value="M1"/>
+                                                <xs:enumeration value="M2"/>
+                                                <xs:enumeration value="M3"/>
+                                                <xs:enumeration value="O1"/>
+                                                <xs:enumeration value="O2"/>
+                                                <xs:enumeration value="O3"/>
+                                                <xs:enumeration value="S1"/>
+                                                <xs:enumeration value="S4"/>
+                                            </xs:documentation>
+                                        </xs:annotation>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
@@ -306,20 +314,24 @@
                             <xs:element name="LegalBase" minOccurs="0" maxOccurs="unbounded">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
-                                        <!-- see LADA Stammdaten datenbasis with additions -->
-                                        <xs:enumeration value="§161"/>
-                                        <xs:enumeration value="§162"/>
-                                        <xs:enumeration value="§162SPARSE"/>
-                                        <xs:enumeration value="AVV IMIS"/>
-                                        <xs:enumeration value="DENSE"/>
-                                        <xs:enumeration value="EURDEP"/>
-                                        <xs:enumeration value="Europa"/>
-                                        <xs:enumeration value="IRMIS"/>
-                                        <xs:enumeration value="KFÜ"/>
-                                        <xs:enumeration value="Land"/>
-                                        <xs:enumeration value="REI-E"/>
-                                        <xs:enumeration value="REI-I"/>
-                                        <xs:enumeration value="SPARSE"/>
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <!-- see LADA Stammdaten datenbasis with additions -->
+                                                <xs:enumeration value="§161"/>
+                                                <xs:enumeration value="§162"/>
+                                                <xs:enumeration value="§162SPARSE"/>
+                                                <xs:enumeration value="AVV IMIS"/>
+                                                <xs:enumeration value="DENSE"/>
+                                                <xs:enumeration value="EURDEP"/>
+                                                <xs:enumeration value="Europa"/>
+                                                <xs:enumeration value="IRMIS"/>
+                                                <xs:enumeration value="KFÜ"/>
+                                                <xs:enumeration value="Land"/>
+                                                <xs:enumeration value="REI-E"/>
+                                                <xs:enumeration value="REI-I"/>
+                                                <xs:enumeration value="SPARSE"/>
+                                            </xs:documentation>
+                                        </xs:annotation>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
@@ -335,8 +347,8 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="SamplingBegin" type="xs:dateTime"/>
-                            <xs:element name="SamplingEnd" type="xs:dateTime"/>
+                            <xs:element name="SamplingBegin" type="xs:dateTime" minOccurs="0"/>
+                            <xs:element name="SamplingEnd" type="xs:dateTime" minOccurs="0"/>
                             <xs:element name="Duration" minOccurs="0">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -392,35 +404,43 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="TrajectoryStartTime" type="xs:dateTime">
+                            <xs:element name="TrajectoryStartTime" type="xs:dateTime" minOccurs="0">
                             </xs:element>
-                            <xs:element name="TrajectoryEndTime" type="xs:dateTime">
+                            <xs:element name="TrajectoryEndTime" type="xs:dateTime" minOccurs="0">
                             </xs:element>
                             <xs:element name="MeasuringProgram" minOccurs="0" maxOccurs="unbounded">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
-                                        <!-- FIXME - NOT in sync with LADA Stammdaten betriebsart (Messregime)! -->
-                                        <xs:enumeration value="Intensivmessprogramm"/>
-                                        <xs:enumeration value="REI"/>
-                                        <xs:enumeration value="Routinemessprogramm"/>
-                                        <xs:enumeration value="Spontanproben Bund"/>
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <!-- FIXME - NOT in sync with LADA Stammdaten betriebsart (Messregime)! -->
+                                                <xs:enumeration value="Intensivmessprogramm"/>
+                                                <xs:enumeration value="REI"/>
+                                                <xs:enumeration value="Routinemessprogramm"/>
+                                                <xs:enumeration value="Spontanproben Bund"/>
+                                            </xs:documentation>
+                                        </xs:annotation>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
                             <xs:element name="Status" minOccurs="0">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
-                                        <!-- FIXME - NOT synced with LADA Stammdaten status_wert. Better use ids? -->
-                                        <xs:enumeration value="nicht vergeben"/>
-                                        <xs:enumeration value="plausibel"/>
-                                        <xs:enumeration value="nicht repräsentativ"/>
-                                        <xs:enumeration value="nicht plausibel"/>
-                                        <xs:enumeration value="Rückfrage abgesetzt"/>
-                                        <xs:enumeration value="Rücklauf bearbeitet"/>
-                                        <xs:enumeration value="nicht lieferbar"/>
-                                        <xs:enumeration value="zurückgesetzt"/>
-                                        <xs:enumeration value="geprüft"/>
-                                        <xs:enumeration value="ungeprüft"/>
+                                        <xs:annotation>
+                                            <xs:documentation>
+                                                <!-- FIXME - NOT synced with LADA Stammdaten status_wert. Better use ids? -->
+                                                <xs:enumeration value="nicht vergeben"/>
+                                                <xs:enumeration value="plausibel"/>
+                                                <xs:enumeration value="nicht repräsentativ"/>
+                                                <xs:enumeration value="nicht plausibel"/>
+                                                <xs:enumeration value="Rückfrage abgesetzt"/>
+                                                <xs:enumeration value="Rücklauf bearbeitet"/>
+                                                <xs:enumeration value="nicht lieferbar"/>
+                                                <xs:enumeration value="zurückgesetzt"/>
+                                                <xs:enumeration value="geprüft"/>
+                                                <xs:enumeration value="ungeprüft"/>
+                                            </xs:documentation>
+                                        </xs:annotation>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
